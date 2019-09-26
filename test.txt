@@ -2,3 +2,4 @@
 this is a merge branch
 这是master,这是merge上添加的内容
 version
+version2
