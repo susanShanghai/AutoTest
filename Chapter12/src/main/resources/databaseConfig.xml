@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    &lt;!&ndash; 引入外部资源文件 &ndash;&gt;-->
+<!--    <properties resource="jdbc.properties"></properties>-->
+<!--    &lt;!&ndash; 设置驼峰匹配 &ndash;&gt;-->
+<!--    <settings>-->
+<!--        <setting name="localCacheScope" value="STATEMENT"/>-->
+<!--    </settings>-->
+<!--    &lt;!&ndash; 设置包扫描(别名) &ndash;&gt;-->
+<!--    <typeAliases>-->
+<!--        <package name="cn.itcast.pojo"/>-->
+<!--    </typeAliases>-->
+    <!-- 配置环境：可以配置多个环境，default：配置某一个环境的唯一标识，表示默认使用哪个环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!-- 配置连接信息 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://10.160.201.26:3306/course?useAffectedRows=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="passw0rd"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 配置映射文件：用来配置sql语句和结果集类型等 -->
+    <mappers>
+        <mapper resource="mapper/SQLMapper.xml"/>
+    </mappers>
+</configuration>

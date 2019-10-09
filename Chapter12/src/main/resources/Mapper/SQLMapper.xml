@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.course.model">
+    <select id="loginCase" parameterType="Integer" resultType="com.course.model.LoginCase">
+        select * from loginCase where id=#{id}
+    </select>
+<!-- 获取插入用户接口case   -->
+    <select id="addUserCase" parameterType="Integer" resultType="com.course.model.AddUserCase">
+        select * from addUserCase where id=#{id}
+    </select>
+<!--    获取用户信息case-->
+    <select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfoCase">
+        select * from getUserInfoCase where id=#{id}
+    </select>
+    <!--    获取用户列表信息case-->
+    <select id="getUserListCase" parameterType="Integer" resultType="com.course.model.GetUserListCase">
+        select * from getUserListCase where id=#{id}
+    </select>
+
+<!--    更新/删除用户case-->
+    <select id="updateUserInfoCase" parameterType="Integer" resultType="com.course.model.UpdateUserInfoCase">
+        select * from updateUserCase where id=#{id}
+    </select>
+
+<!--    <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">-->
+<!--        select * from user where id=#{userId}-->
+<!--    </select>-->
+
+    <select id="addUser" flushCache="true" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User" >
+        select * from user where
+        userName=#{userName}
+        and password=#{password}
+        and sex=#{sex}
+        and age=#{age}
+        and permission=#{permission}
+        and isDelete=#{isDelete}
+    </select>
+
+    <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">
+        select * from user where
+        id=#{userId}
+    </select>
+
+    <select id="getUserList" parameterType="com.course.model.GetUserListCase" resultType="com.course.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null !=userName and ''!=userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null !=sex and ''!=sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null !=age and ''!=age">
+                AND age=#{age}
+            </if>
+        </trim>
+
+    </select>
+    
+    <select id="getUpdateUserInfo" parameterType="com.course.model.UpdateUserInfoCase" resultType="com.course.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null !=userName and ''!=userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null !=sex and ''!=sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null !=isDelete and ''!=isDelete">
+                AND isDelete=#{isDelete}
+            </if>
+            <if test="null !=age and ''!=age">
+                AND age=#{age}
+            </if>
+            <if test="null !=permission and ''!=permission">
+                AND permission=#{permission}
+            </if>
+            And id=#{userId}
+        </trim>
+
+    </select>
+
+    <select id="deleteUser" parameterType="com.course.model.UpdateUserInfoCase" resultType="com.course.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null !=isDelete and ''!=isDelete">
+                AND isDelete=#{isDelete}
+            </if>
+            And id=#{userId}
+        </trim>
+
+    </select>
+
+
+
+
+</mapper>

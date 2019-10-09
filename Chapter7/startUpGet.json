@@ -1,0 +1,27 @@
+[
+  {
+  "description": "mock an get request without prameter",
+    "request": {
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "this is an no pra get request"
+    }
+  },
+  {
+    "description": "this is an get request with prams",
+    "request": {
+      "uri": "/getwithParam",
+      "method": "get",
+      "queries": {
+        "name": "huhansan",
+        "age": "18"
+      }
+    },
+      "response": {
+        "text":"I am coming back again"
+      }
+    }
+
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "description": "redirect to baidu",
+    "request": {
+      "uri": "/redirect"
+      },
+    "redirectTo": "http://www.baidu.com"
+  },
+  {
+    "description": "redirect to our product",
+    "request": {
+      "uri": "/redirect/mypage"
+    },
+    "redirectTo": "/redirect/new"
+  },
+  {
+    "description": "This is the target request",
+    "request": {
+      "uri": "/redirect/new"
+    },
+    "response":{
+      "text": "redirect successfully"
+    }
+  }
+]

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="suiteMultiThreads" parallel="classes" thread-count="2">
+    <test name="testMultiThreads">
+    <classes>
+        <class name="com.course.testng.multiThreads.MultiThreadsonXml"/>
+        <class name="com.course.testng.BasicAnnotation"/>
+
+    </classes>
+    </test>
+
+    <test name="test2">
+        <classes>
+<!--            <class name="com.course.testng.BasicAnnotation"/>-->
+        </classes>
+    </test>
+
+</suite>
