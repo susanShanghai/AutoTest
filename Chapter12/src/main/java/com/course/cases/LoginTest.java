@@ -54,7 +54,8 @@ public class LoginTest {
 
         HttpResponse response=TestConfig.defaultHttpClient.execute(post);
         String result= EntityUtils.toString(response.getEntity(),"utf-8");
-        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+        //TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+        TestConfig.store=TestConfig.defaultHttpClient.getCookieStore();
         return result;
     }
 
