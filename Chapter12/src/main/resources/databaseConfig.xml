@@ -20,7 +20,7 @@
             <dataSource type="POOLED">
                 <!-- 配置连接信息 -->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://10.160.201.26:3306/course?useAffectedRows=true"/>
+                <property name="url" value="jdbc:mysql://192.168.0.103:3306/course?useAffectedRows=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value="passw0rd"/>
             </dataSource>
